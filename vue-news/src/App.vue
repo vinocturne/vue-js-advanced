@@ -1,27 +1,21 @@
 <template>
   <div id="app">
-    Hello
+    <tool-bar></tool-bar>
+    <!-- url이 만약 news면 router-view에 NewsView가 뿌려진다. -->
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 /* eslint-disable */
+import ToolBar from './components/ToolBar.vue';
 export default {
-  methods: {
-    fetchData() {
-      console.log('hello');
-    }
+  components: {
+    ToolBar
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
