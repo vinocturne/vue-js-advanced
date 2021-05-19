@@ -13,16 +13,12 @@ export default {
     }
   },
   created() {
-    
-    var vm = this;
+    console.log('호출 전 : ',this)
     fetchNewsList()
-    .then(function(response) {
-      console.log(response);
-      vm.users = response.data;
+    .then(response => {
+      this.users = response.data;
     })
-    .catch(function(error) {
-      console.log(error);
-    })
+    .catch(error => console.log(error));
 
     // //axios를 불러오면 new Promise 객체가 생성이되어 then과 catch로 데이터를 조작할 수 있다.
     // axios.get('https://api.hnpwa.com/v0/news/1.json')
