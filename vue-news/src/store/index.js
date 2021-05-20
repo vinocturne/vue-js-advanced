@@ -10,7 +10,8 @@ export const store = new Vuex.Store({
   state : {
     news: [],
     asks : [],
-    jobs : []
+    jobs : [],
+    user : []
   },
   getters: {
     fetchedAsk(state) {
