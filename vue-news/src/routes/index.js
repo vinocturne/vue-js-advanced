@@ -18,15 +18,19 @@ export const router = new VueRouter({
     {
         //path: url에 대한 정보
         path: '/news',
+        name: 'news',
         //component : url 주소로 갔을 때 표시될 컴포넌트
         component: NewsView
     },
     {
         path: '/ask',
+        name: 'ask',
+        // this.$route를 통해 분기문을 만들 때 기본 속성인 name을 이용해 분기점을 만들기 위함
         component: AskView
     },
     {
         path: '/jobs',
+        name: 'jobs',
         component: JobsView
     },
     {

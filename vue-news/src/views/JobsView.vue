@@ -1,20 +1,18 @@
 <template>
   <div>
-    <ul class="jobs-list">
+    <ul class="news-list">
       <li v-for="item in this.$store.state.jobs" class="post">
         <div class="points">
           {{ item.points || 0}}
         </div>
         <div>
-          <p class="jobs-title">
+          <p class="news-title">
             <a :href="item.url">
               {{ item.title }}
             </a>
           </p>
           <small class = "link-text">
             {{item.time_ago}} by
-            <!-- <router-link v-bind:to="`/user/${item.user}`"> 
-            {{item.domain}} </router-link>  -->
             <a :href="item.url">
               {{item.domain}}
             </a>
@@ -34,7 +32,7 @@ export default {
 </script>
 
 <style scoped>
-.jobs-list {
+.news-list {
   margin: 0;
   padding : 0;
 }
@@ -52,7 +50,7 @@ export default {
   align-items: center;
   border-bottom: 1px solid #eee;
 }
-.jobs-title {
+.news-title {
   margin: 0;
 }
 .link-text {
