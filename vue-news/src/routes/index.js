@@ -20,20 +20,22 @@ export const router = new VueRouter({
         path: '/news',
         name: 'news',
         //component : url 주소로 갔을 때 표시될 컴포넌트
-        // component: NewsView
-        component: createListView('NewsView')
+        component: NewsView //mixin을 사용할때에는 그냥 component로 사용
+        // component: createListView('NewsView') 하이오더컴포넌트에서는 이런식으로 중간 컴포넌트를 하나 더 만듬
     },
     {
         path: '/ask',
         name: 'ask',
         // this.$route를 통해 분기문을 만들 때 기본 속성인 name을 이용해 분기점을 만들기 위함
-        component: createListView('AskView')
+        // component: createListView('AskView')
+        component: AskView
     },
     {
         path: '/jobs',
         name: 'jobs',
-        component: createListView('JobsView')
-    },
+        // component: createListView('JobsView')
+        component: JobsView
+      },
     {
         path: '/item/:id',
         component: ItemView
