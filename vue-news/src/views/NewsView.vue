@@ -12,7 +12,11 @@ import ListMixin from '../mixins/ListMixin.js';
 export default {
   components: {
     ListItem,
-  },
+  }, 
+  // mounted() {
+  //   //완료된 시점에 시행하는 라이프사이클 함수
+  //   bus.$emit('end:spinner');
+  // }
   mixins: [ListMixin]
   // created() {
   //    bus.$emit('start:spinner');

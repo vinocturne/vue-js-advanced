@@ -1,7 +1,7 @@
 import { fetchAskList, fetchItem, fetchJobsList, fetchNewsList, fetchUserInfo, fetchList } from '../api/index.js';
 export default {
     // FETCH_NEWS(context) {
-    //     fetchNewsList()
+    //     return fetchNewsList()
     //         .then(response => {
     //             //구조상 actions에서 state로 바로 데이터를 바인딩 할 수 없다.
     //             //actions에서는 mutations을 거쳐 state로 가기 때문에
@@ -16,7 +16,7 @@ export default {
     //         });
     // },
     // FETCH_ASKS({ commit }) {
-    //     fetchAskList()
+    //     return fetchAskList()
     //         .then(({ data }) => {
     //             commit('SET_ASKS', data);
     //         })
@@ -25,7 +25,7 @@ export default {
     //         })
     // },
     // FETCH_JOBS({ commit }) {
-    //     fetchJobsList()
+    //     return fetchJobsList()
     //         //디스트럭쳐링 ({ })
     //         .then(({ data }) => {
     //             commit('SET_JOBS', data);
@@ -35,7 +35,7 @@ export default {
     //         })
     // },
     FETCH_USER({ commit }, name) {
-        fetchUserInfo(name)
+        return fetchUserInfo(name)
             .then(({ data }) => {
                 commit('SET_USER', data);
             })
@@ -44,7 +44,7 @@ export default {
             })
     },
     FETCH_ITEM({ commit }, item) {
-        fetchItem(item)
+        return fetchItem(item)
             .then(({ data }) => {
                 commit('SET_ITEM', data);
             })
@@ -53,8 +53,11 @@ export default {
             })
     },
     FETCH_LIST({ commit }, pageName) {
-        fetchList(pageName)
-            .then(({ data }) => commit('SET_LIST', data))
+        return fetchList(pageName)
+            .then(response => {
+                commit('SET_LIST', response.data);
+                return response;
+            })
             .catch(error => console.log(error));
     }
 }

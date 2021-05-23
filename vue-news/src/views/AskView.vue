@@ -13,6 +13,11 @@ export default {
   components: {
     ListItem,
   },
+  // mounted() {
+  //   //완료된 시점에 시행하는 라이프사이클 함수
+  //   bus.$emit('end:spinner');
+  //   믹스인으로 재활용 가능
+  // }
   mixins: [ListMixin]
   // created() {
   //    bus.$emit('start:spinner');
